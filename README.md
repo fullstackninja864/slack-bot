@@ -3,6 +3,7 @@
 ## To build a image :
 
 docker build -t slackbot-cmaliwal:0.0.1 .
+
 docker-compose up -d
 
 
@@ -17,3 +18,10 @@ Note : generate token for your slack-bot and add token on app.py
 ### versions :
 
 Python3.5
+
+Note : You can use alphine image of python to reduce the images size .
+
+
+##TODO :
+
+Multistage build : working . 
