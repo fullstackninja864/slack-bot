@@ -1,12 +1,14 @@
 version: '2'
 services:
     web:
-        image: slackbot-cmaliwal:0.0.1
+        image: slackbot-prod:0.0.1
+        restart: always
         volumes:
             - .:/src        
         depends_on:
             - redis
     redis:
         image: redis
+        restart: always
         ports:
             - "7379:6379"
