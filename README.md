@@ -1,27 +1,38 @@
-### Slackbot using python and docker :
 
-## To build a image :
+### SlackBot 
 
-docker build -t slackbot-cmaliwal:0.0.1 .
+### Working 
 
-docker-compose up -d
+To add IP in security groups :
+@chatops-bot <your ip>
+
+i.e. : @chatops-bot 127.1.1.1
+
+To revoke IP :
+@chatops-bot revoke <your ip>
+
+i.e. : @chatops-bot revoke 127.1.1.1
+
+Note :
+1. Please remove old IP before adding new one
+2. Allow only 3 IPs per user .
+
+### Tech stack :
+
+1. Python3.x 
+2. slackclient
+3. boto3
+4. slackApi 
+5. Docker
+
+### References :
+
+slack-api : https://api.slack.com
+slack-client : https://github.com/slackapi/python-slackclient
 
 
-### slack-api :
+###Infra details :
 
-https://api.slack.com
+> docker build -t slackbot-prod:0.0.1 .
 
-
-Note : generate token for your slack-bot and add token on app.py
-
-
-### versions :
-
-Python3.5
-
-Note : You can use alphine image of python to reduce the images size .
-
-
-##TODO :
-
-Multistage build : working . 
+> docker-compose up -d
